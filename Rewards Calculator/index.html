@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Rewards Program</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Customer Rewards Program</h1>
+            <p>Track and calculate customer reward points based on transactions</p>
+        </header>
+
+        <main class="main-content">
+            <section class="filters-section">
+                <div class="filter-group">
+                    <label for="customerSelect">Select Customer:</label>
+                    <select id="customerSelect" class="select-input">
+                        <option value="">Loading customers...</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="monthFilter">Month:</label>
+                    <select id="monthFilter" class="select-input">
+                        <option value="last3">Last 3 Months</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="yearFilter">Year:</label>
+                    <select id="yearFilter" class="select-input">
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+                
+                <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+            </section>
+
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading data...</p>
+            </div>
+
+            <div id="errorState" class="error-state" style="display: none;">
+                <p class="error-message">Error loading data. Please try again.</p>
+                <button id="retryBtn" class="btn btn-secondary">Retry</button>
+            </div>
+
+            <section id="resultsSection" class="results-section" style="display: none;">
+         
+                <div class="summary-cards">
+                    <div class="card total-points-card">
+                        <h3>Total Reward Points</h3>
+                        <div id="totalPoints" class="points-value">0</div>
+                    </div>
+                </div>
+
+                <div class="monthly-summary">
+                    <h3>Monthly Breakdown</h3>
+                    <div id="monthlySummary" class="monthly-grid">
+                    </div>
+                </div>
+
+                <div class="transaction-details">
+                    <h3>Transaction Details</h3>
+                    <div id="transactionTable" class="table-container">
+                    </div>
+                    
+                    <div id="paginationContainer" class="pagination-container">
+                    </div>
+                </div>
+
+                <div id="noDataMessage" class="no-data-message" style="display: none;">
+                    <p>No transactions found for the selected criteria.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/data/mock-data.js"></script>
+    <script type="module" src="js/utils/logger.js"></script>
+    <script type="module" src="js/utils/pagination.js"></script>
+    <script type="module" src="js/utils/filters.js"></script>
+    <script type="module" src="js/services/api.js"></script>
+    <script type="module" src="js/services/rewards.js"></script>
+    <script type="module" src="js/components/ui.js"></script>
+    <script type="module" src="js/components/transactions.js"></script>
+    <script type="module" src="js/components/monthly-summary.js"></script>
+    <script type="module" src="js/tests/rewards.test.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

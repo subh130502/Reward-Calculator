@@ -1,0 +1,92 @@
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .filters-section {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-primary {
+        grid-column: span 1;
+    }
+
+    .transaction-table th,
+    .transaction-table td {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+
+    .points-value {
+        font-size: 2rem;
+    }
+
+    .monthly-points {
+        font-size: 1.5rem;
+    }
+
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .monthly-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .pagination-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pagination-info {
+        margin: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .filters-section {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .monthly-card {
+        padding: 15px;
+    }
+
+    .transaction-table th,
+    .transaction-table td {
+        padding: 8px 4px;
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+}
