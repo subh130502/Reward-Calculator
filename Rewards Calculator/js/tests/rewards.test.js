@@ -48,14 +48,15 @@ export function runTests() {
     
     tests.forEach(test => {
         if (test.test()) {
-            logger.info(`✅ PASS: ${test.name}`);
+            logger.info(`PASS: ${test.name}`);
             passed++;
         } else {
-            logger.error(`❌ FAIL: ${test.name} - Expected: ${test.expected}, Actual: ${test.actual}`);
+            logger.error(`FAIL: ${test.name} - Expected: ${test.expected}, Actual: ${test.actual}`);
             failed++;
         }
     });
     
     logger.info(`Tests completed: ${passed} passed, ${failed} failed`);
     return { passed, failed, total: tests.length };
+
 }
